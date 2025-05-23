@@ -1,10 +1,30 @@
+import React from "react";
+import Header from "./components/Header";
+import GameBoard from "./components/Game/GameBoard";
+import ControlPanel from "./components/Game/ControlPanel";
+import { useGameEngine } from "./hooks/useGameEngine";
 import "./styles.css";
 
 export default function App() {
+  const { cards, health, guessedWords, selectedCards, selectCard, restart } =
+    useGameEngine();
+
   return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
+    <div>
+      <Header />
+      <main>
+        <GameBoard
+          cards={cards}
+          selectedCards={selectedCards}
+          guessedWords={guessedWords}
+          selectCard={selectCard}
+        />
+        <ControlPanel
+          health={health}
+          guessedWords={guessedWords}
+          restart={restart}
+        />
+      </main>
     </div>
   );
 }

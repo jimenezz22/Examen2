@@ -1,0 +1,117 @@
+#AppCards {
+  width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+}
+
+/**
+ * Styles for the AppCard component
+ */
+.AppCard {
+  width: 100px;
+  height: 150px;
+  background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+  border-radius: 20px;
+  transition: all 0.3s;
+  margin: 10px;
+  position: relative;
+}
+
+.AppCardStyled {
+  cursor: pointer;
+  width: 100px;
+  height: 150px;
+  background-color: #1a1a1a;
+  transition: all 0.2s;
+}
+
+.AppCardStyled:hover {
+  transform: scale(0.98);
+  border-radius: 20px;
+}
+
+.AppCard:hover {
+  box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.3);
+}
+
+.AppCardValue {
+  display: none;
+  color: #fff;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  transform: rotateY(180deg);
+}
+.AppCard.flipped,
+.AppCard.guessed {
+  transform: rotateY(180deg);
+}
+.AppCard.flipped .AppCardValue,
+.AppCard.guessed .AppCardValue {
+  display: block;
+}
+
+/* AppControlPanel styles */
+#AppControlPanel {
+  color: #fff;
+  background-color: #292929;
+  height: 100%;
+  text-align: center;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#AppControlPanel ul li {
+  list-style: none;
+}
+
+#AppControlPanel h2 {
+  font-weight: 200;
+  margin: 20px 20px 0;
+}
+
+/* Hearts section */
+#health {
+  display: flex;
+  justify-content: center;
+}
+
+/* Restart button */
+button#restart {
+  font-size: 18px;
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  will-change: box-shadow, transform;
+  background: radial-gradient(100% 100% at 100% 0%, #89e5ff 0%, #5468ff 100%);
+  box-shadow: 0px 0.01em 0.01em rgb(45 35 66 / 40%),
+    0px 0.3em 0.7em -0.01em rgb(45 35 66 / 30%),
+    inset 0px -0.01em 0px rgb(58 65 111 / 50%);
+  padding: 0 2em;
+  border-radius: 0.3em;
+  color: #fff;
+  height: 2.6em;
+  text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+  margin-top: 50px;
+}
+
+button#restart:hover {
+  box-shadow: 0px 0.1em 0.2em rgb(45 35 66 / 40%),
+    0px 0.4em 0.7em -0.1em rgb(45 35 66 / 30%), inset 0px -0.1em 0px #3c4fe0;
+  transform: translateY(-0.1em);
+}
+
+button#restart:active {
+  box-shadow: inset 0px 0.1em 0.6em #3c4fe0;
+  transform: translateY(0em);
+}
